@@ -1,0 +1,53 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Form</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <style>
+        /* Add your custom styles here */
+    </style>
+</head>
+
+<body class="bg-gray-200">
+   
+    <nav class="bg-gray-500 p-4">
+
+        <div class="flex items-center">
+            <img src="/images/logo2.png" alt="Logo" class="h-8 mr-2">
+           
+        </div>
+        <div class="container mx-auto">
+            <a href="/teacher/students" class="text-white font-bold">StudentData</a>
+           
+         </div>
+    </nav> 
+
+    <!-- Form Section -->
+    <div class="container mx-auto mt-8 p-4 bg-white rounded-lg shadow-md">
+        <form action="/teacher" method="POST" class="space-y-4">
+            <div>
+                <label for="username" class="block text-sm font-medium text-gray-600">Student Name</label>
+                <input type="text" name="username" id="username" class="mt-1 p-2 border rounded-md w-full">
+            </div>
+
+            <div>
+                <label for="date" class="block text-sm font-medium text-gray-600">Date</label>
+                <input type="date" name="date" id="date" class="mt-1 p-2 border rounded-md w-full">
+            </div>
+
+            <div>
+                <label for="roll-number" class="block text-sm font-medium text-gray-600">Roll Number</label>
+                <input type="number" name="roll" id="roll-number" class="mt-1 p-2 border rounded-md w-full">
+            </div>
+
+            <button type="submit" class="bg-blue-500 text-white p-2 rounded-md hover:bg-blue-600">Submit</button>
+        </form>
+    </div>
+</body>
+
+</html>

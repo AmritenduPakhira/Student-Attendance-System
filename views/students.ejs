@@ -1,0 +1,72 @@
+<!-- Your student.ejs file -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <title>Student Dashboard</title>
+</head>
+<body class="bg-gray-100">
+
+
+<nav class="bg-gray-800 p-4 text-white flex justify-between">
+    <div class="flex items-center">
+        <img src="/images/logo2.png" alt="Logo" class="h-8 mr-2">
+       
+    </div>
+    <div>
+        <span class="text-2xl font-bold">Chitkara University</span>
+        <span class="ml-4">3rd Year CSE Grp 14</span>
+    </div>
+    <div>
+        <span class="ml-4"><a href="/teacher" class="text-white">Home</a></span>
+        <span class="ml-4"><a href="/teacher/addstudent" class="text-white">StudentEntry</a></span>
+        <span class="ml-4"><a href="/teacher/studentdata" class="text-white">StudentRecord</a></span>
+    </div>
+</nav>
+
+<div class="container mx-auto mt-8">
+    <h1 class="text-3xl font-bold mb-4">Student Dashboard</h1>
+
+    
+    <table class="min-w-full bg-white border border-gray-300 shadow mb-8">
+        <thead>
+            <tr>
+                <th class="border border-gray-300 px-4 py-2">#</th>
+                <th class="border border-gray-300 px-4 py-2">Name</th>
+                <th class="border border-gray-300 px-4 py-2">Roll Number</th>
+                <th class="border border-gray-300 px-4 py-2">Attendance Form</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% students.forEach((student, index) => { %>
+                <tr>
+                    <td class="border border-gray-300 px-4 py-2"><%= index + 1 %></td>
+                    <td class="border border-gray-300 px-4 py-2"><%= student.name %></td>
+                    <td class="border border-gray-300 px-4 py-2"><%= student.roll_number %></td>
+                    <td class="border border-gray-300 px-4 py-2">
+                        <!-- Form for posting attendance for each student -->
+                        <form action="/teacher/post-attendance/<%= student._id %>" method="post" class="space-y-2">
+                            <label for="attendanceDate_<%= student._id %>" class="block text-sm font-medium text-gray-700">Attendance Date</label>
+                            <input type="date" id="attendanceDate_<%= student._id %>" name="attendanceDate" required class="p-2 border border-gray-300 rounded-md">
+
+                            <label for="status_<%= student._id %>" class="block text-sm font-medium text-gray-700">Attendance Status</label>
+                            <select id="status_<%= student._id %>" name="status" required class="p-2 border border-gray-300 rounded-md">
+                                <option value="present">Present</option>
+                                <option value="absent">Absent</option>
+                            </select>
+
+                            <!-- Add other fields as needed -->
+
+                            <button type="submit" class="p-2 bg-blue-500 text-white rounded-md">Submit Attendance</button>
+                        </form>
+                    </td>
+                </tr>
+            <% }); %>
+        </tbody>
+    </table>
+</div>
+
+</body>
+</html>

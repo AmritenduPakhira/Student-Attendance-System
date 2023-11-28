@@ -1,0 +1,76 @@
+<!-- student.ejs file -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Student Profile</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+    <script src="https://code.highcharts.com/highcharts.js"></script>
+</head>
+
+<body class="bg-gray-100">
+
+    <!-- Navbar -->
+    <nav class="bg-gray-800 text-white p-4">
+        <div class="container mx-auto flex justify-between items-center">
+            <!-- University Logo -->
+            <img src="/images/logo2.png" alt="Chitkara University Logo" class="h-10">
+
+            <!-- University Welcome Message and Year -->
+            <div class="text-lg">
+                <p>Welcome to Chitkara University</p>
+                <p>3rd Year - Group 14</p>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Main Content Section -->
+    <div class="container mx-auto flex justify-center mt-4">
+
+        <!-- Student Profile Section -->
+        <div class="max-w-md w-full p-6 bg-white rounded-md shadow-md mr-4">
+            <h2 class="text-2xl font-semibold mb-6 text-center">Student Profile</h2>
+
+            <!-- Student Information -->
+            <div class="mb-4">
+                <label class="block text-gray-600">Name</label>
+                <p class="text-black py-2 px-3 border rounded-md bg-gray-100"><%=student.name%></p>
+            </div>
+
+            <div class="mb-4">
+                <label class="block text-gray-600">Roll Number</label>
+                <p class="text-black py-2 px-3 border rounded-md bg-gray-100"><%=student.roll_number%></p>
+            </div>
+
+            <!-- Display attendance data -->
+            <div>
+                <h3 class="text-xl font-semibold mb-4">Attendance Data</h3>
+
+                <table class="min-w-full bg-white border border-gray-300 shadow">
+                    <thead>
+                        <tr>
+                            <th class="border border-gray-300 px-4 py-2">Date</th>
+                            <th class="border border-gray-300 px-4 py-2">Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <% student.attendance.forEach(entry => { %>
+                            <tr>
+                                <td class="border border-gray-300 px-4 py-2"><%= entry.date.toISOString().split('T')[0] %></td>
+                                <td class="border border-gray-300 px-4 py-2"><%= entry.isPresent ? 'Present' : 'Absent' %></td>
+                            </tr>
+                        <% }); %>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+
+       
+
+   
+
+</body>
+
+</html>

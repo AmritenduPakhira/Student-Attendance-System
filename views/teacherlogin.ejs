@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chitkara University - Log In</title>
+  
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css">
+  
+  <style>
+    body {
+      background-image: url('https://images.unsplash.com/photo-1531685250784-7569952593d2?q=80&w=1974&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+      background-size: cover;
+      background-position: center;
+    }
+
+    /* Add more custom styles as needed */
+  </style>
+</head>
+
+<body class="bg-gray-100 h-screen flex items-center justify-around">
+
+  <!-- Add the Chitkara University header -->
+  <header class="text-center mb-6">
+    <img src="/images/logo2.png" alt="Chitkara University Logo" class="mx-auto mb-4" width="100">
+    <h1 class="text-3xl font-semibold text-red-600">Chitkara University</h1>
+    <p class="text-xl font-bold text-black">3rd Year - Group 14</p>
+  </header>
+
+  <div class="max-w-md w-full p-6 bg-white rounded-md shadow-md">
+    <h2 class="text-2xl font-semibold mb-6 text-center">Log In</h2>
+
+    <!-- Your signup form -->
+    <form action="/teacher/login" method="POST" class="space-y-4">
+      <div class="mb-4">
+        <label for="username" class="block text-gray-600">Username</label>
+        <input type="text" id="username" name="username" class="w-full border rounded-md py-2 px-3 focus:outline-none focus:border-blue-500" required>
+      </div>
+
+      <div class="mb-4">
+        <label for="password" class="block text-gray-600">Password</label>
+        <input type="password" id="password" name="password" class="w-full border rounded-md py-2 px-3 focus:outline-none focus:border-blue-500" required>
+      </div>
+
+
+      <button type="submit" class="w-full bg-blue-500 text-white py-2 rounded-md hover:bg-blue-600">Log In</button>
+    </form>
+
+  </div>
+
+</body>
+
+</html>
