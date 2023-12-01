@@ -3,7 +3,7 @@ const app = express()
 const teacherSchema = require('./models/teacher.schema')
 const studentSchema = require('./models/student.schema')
 const mongoose = require('mongoose')
-mongoose.connect('mongodb://localhost:27017/myDB')
+mongoose.connect('mongodb+srv://amrit:<amrit>@cluster0.waavhn9.mongodb.net/myDB')
 .then(()=>{
     console.log(
         'db connected'
